@@ -1,0 +1,20 @@
+{
+  "name": "ai-email",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "groq-sdk": "^0.36.0",
+    "nodemailer": "^7.0.10",
+    "readline-sync": "^1.4.10"
+  }
+}
