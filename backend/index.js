@@ -14,9 +14,9 @@ app.use(cors());
 
 app.post("/api/send-email", async (req, res) => {
 	const { to, subject, emailContent } = req.body;
+	console.log("email sent")
 	try {
 		await sendEmail(to, subject, emailContent);
-		console.log("email sent")
 		return res.status(200).json({
 			success: true,
 			message: "Email sent",
