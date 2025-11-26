@@ -21,9 +21,6 @@ exports.sendEmail = async (to, subject, message, req, res) => {
 	// console.log("Email sent");
 }
 	catch(e){
-		return res.status(500).json({
-			success: false,
-			message: "SMTP connection blocked by Gmail."
-		})
+		console.log("SMTP error");
 	}
 };
