@@ -8,7 +8,7 @@ function AI_content_generator() {
     const [emailStatus, setEmailStatus] = useState(null); // success / fail
 
     const handleGeneratePromt = async () => {
-        const response = await fetch("http://localhost:5000/api/generate-email", {
+        const response = await fetch("https://ai-email-agent-r100/api/generate-email", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -23,7 +23,7 @@ function AI_content_generator() {
     const handleSendEmail = async () => {
         if (contentGenerated.length === 0 || receiverEmail.length === 0) return;
 
-        const response = await fetch("http://localhost:5000/api/send-email", {
+        const response = await fetch("https://ai-email-agent-r100/api/send-email", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
