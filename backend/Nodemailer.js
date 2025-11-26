@@ -14,6 +14,7 @@ exports.sendEmail = async (to, subject, message, req, res) => {
 		subject: subject,
 		text: message,
 	};
+	console.log("Nodemailer file reached")
 	await transporter.sendMail(mailDetails);
 	// console.log("Email sent");
 };
