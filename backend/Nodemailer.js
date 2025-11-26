@@ -1,6 +1,7 @@
 const nodemailer = require("nodemailer");
 
 exports.sendEmail = async (to, subject, message, req, res) => {
+	try{
 	const transporter = nodemailer.createTransport({
 		service: "gmail",
 		auth: {
@@ -18,4 +19,11 @@ exports.sendEmail = async (to, subject, message, req, res) => {
 	await transporter.sendMail(mailDetails);
 	console.log("After the nodemailer senmail function")
 	// console.log("Email sent");
+}
+	catch(e){
+		return res.status(500).json({
+			success: false,
+			message: "SMTP connection blocked by Gmail."
+		})
+	}
 };
