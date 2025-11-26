@@ -10,9 +10,7 @@ dotenv.config();
 const app = express();
 
 app.use(express.json());
-app.use(cors({
-    origin: "*"
-}));
+app.use(cors());
 
 app.post("/api/send-email", async (req, res) => {
 	const { to, subject, emailContent } = req.body;
@@ -47,7 +45,7 @@ app.post("/api/generate-email", async (req, res) => {
 	}
 });
 
-// app.listen(process.env.PORT, () => {
-// 	console.log("The server is running on Port: ", process.env.PORT);
-// });
-module.exports = app;
+app.listen(process.env.PORT, () => {
+	console.log("The server is running on Port: ", process.env.PORT);
+});
+
