@@ -23,7 +23,7 @@ app.post("/api/send-email", async (req, res) => {
 	} catch (e) {
 		return res.status(500).json({
 			success: false,
-			message: "Server error occured.",
+			message: error.toString(),
 		});
 	}
 });
